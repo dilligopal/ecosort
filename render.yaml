@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: ecosort
+    runtime: python
+    region: oregon
+
+    # Build command: install deps and download/copy model weights
+    buildCommand: |
+      pip install --upgrade pip
+      pip install -r requirements.txt
+      python download_model.py
+
+    # Production start command: bind to Render's dynamic $PORT
+    startCommand: gunicorn app:app --bind 0.0.0.0:$PORT --workers 1 --timeout 120 --log-level info
+
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12"
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_DEBUG
+        value: "0"
+
+    # Render's free tier has 512 MB RAM; PyTorch CPU uses ~350 MB peak
+    plan: free
+
+    healthCheckPath: /health
+

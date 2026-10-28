@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+    <linearGradient id="stemGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#15803d" />
+      <stop offset="100%" stop-color="#166534" />
+    </linearGradient>
+  </defs>
+  <!-- Circular Badge Backdrop -->
+  <circle cx="32" cy="32" r="30" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="2"/>
+  <!-- Recycling Leaf Shape -->
+  <path d="M30 52A18 18 0 0 1 27 16C41 13 45 12 50 6c2.5 5.5 5 11 5 21 0 14-12 25-25 25Z" fill="url(#leafGrad)"/>
+  <path d="M8 54c0-7.5 4.5-13.5 12.5-15 6 3.8 12.5 0 15-2.5" stroke="url(#stemGrad)" stroke-width="3" stroke-linecap="round"/>
+  <!-- Recycle Loop Accents -->
+  <path d="M22 28l-3-5 5-2" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M42 34l3 5-5 2" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
